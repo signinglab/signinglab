@@ -1,0 +1,36 @@
+{
+ "issuer": "SigningLab",
+ "protocol_addendum": "SL-SAMPLE-v1.1 + SL-OUTCOME-v1",
+ "generation": "SL 2026.1",
+ "created_utc": "2026-08-17T07:42:37+00:00",
+ "supersedes_wording_of": [
+  {
+   "file": "commitments_sl2026_1.json",
+   "sha256": "311dbed3747f30f7014dd15a9589f6365a2c8ae8cec0e146f55fc94d389411f8"
+  },
+  {
+   "file": "keys_manifest_sl2026_1_batch001.json",
+   "sha256": "4279d09dcda1704b42ee1820bcb3803bca546b580f10c75c3879848372b46ec0"
+  }
+ ],
+ "note": "The committed hashes above are immutable and unchanged. This addendum only closes two protocol rules that earlier wording left ambiguous, per external audit review of 17 Aug 2026.",
+ "cumulative_sampling_rule": {
+  "universe": "deduplicated union of commitment hashes across ALL chained batches of this generation published before the announced cutoff",
+  "score": "sha256(\"SL-SAMPLE-v1|\" + beacon_block_hash + \"|\" + commitment_hash)",
+  "selection": "exactly K = min(100, N_total) smallest scores, hex ascending",
+  "cumulative_manifest": "published before the beacon: every batch file, its SHA-256, per-batch and total counts, and the SHA-256 of the sorted union"
+ },
+ "outcome_commitment_rule": {
+  "protocol": "SL-OUTCOME-v1",
+  "leaf": "sha256(commitment_hash|outcome_class|evidence_hash|salt_outcome)",
+  "tree": "leaves sorted ascending; parent = sha256(left|right); odd level: last node promoted unchanged",
+  "order": [
+   "1: season closes; outcomes computed for the FULL population",
+   "2: Merkle root of all outcome leaves published on the verification page",
+   "3: only then the public beacon is read",
+   "4: each sampled entry is revealed with payload, verdict salt, outcome_class, evidence_hash, outcome salt and its Merkle inclusion proof"
+  ],
+  "reference_implementation": "scripts/_congela_desfechos_merkle.py (self-tested)"
+ },
+ "beacon": "first Bitcoin block with timestamp >= 2027-07-01T00:00:00Z that remains canonical at depth 144"
+}

@@ -1,0 +1,5 @@
+# Published artifacts are verified byte for byte. Git must never convert
+# anything on checkout or commit: the SHA-256 values recorded in manifest.json
+# are hashes of these exact bytes, and they have to hold on every platform.
+# Do not remove this file, and do not "normalize line endings" in this repository.
+* -text

@@ -1,0 +1,21 @@
+name: verify
+
+# Runs the same verifier a third party would run, on every push and once a week,
+# so the integrity of the published artifacts is checked in public.
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify published commitments
+        run: python verify.py

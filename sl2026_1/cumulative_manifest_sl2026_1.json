@@ -1,0 +1,76 @@
+{
+ "issuer": "SigningLab",
+ "protocol": "SL-COMMIT-v1",
+ "generation": "SL 2026.1",
+ "type": "cumulative_manifest",
+ "created_utc": "2026-10-12T08:28:40+00:00",
+ "purpose": "Fixes, before any public beacon is read, the complete chain of commitment batches for this generation: every batch file, its SHA-256, its count, and the hash of the deduplicated union of all commitment hashes. The sample to be revealed at season close is drawn from this union and from nothing else.",
+ "batches": [
+  {
+   "batch_id": "001",
+   "file": "sl2026_1/commitments_sl2026_1.json",
+   "sha256": "311dbed3747f30f7014dd15a9589f6365a2c8ae8cec0e146f55fc94d389411f8",
+   "created_utc": "2026-08-17T05:24:58+00:00",
+   "n_commitments": 1985,
+   "prev_file": null,
+   "prev_sha256": null,
+   "leagues": {
+    "ARG-1": 319,
+    "BRA-1": 204,
+    "BRA-2": 373,
+    "CHI-1": 164,
+    "COL-1": 246,
+    "CZE-1": 16,
+    "ENG-1": 61,
+    "ENG-2": 65,
+    "ESP-1": 44,
+    "FRA-1": 42,
+    "GER-1": 50,
+    "ITA-1": 60,
+    "MEX-1": 71,
+    "POR-1": 57,
+    "USA-1": 213
+   }
+  },
+  {
+   "batch_id": "002",
+   "file": "sl2026_1/commitments_sl2026_1_batch002.json",
+   "sha256": "02bf57ba4183a0b510d72b60d45417e71cda73b6eb5bdaa3bb67a9bf105b63a7",
+   "created_utc": "2026-10-12T06:38:02+00:00",
+   "n_commitments": 767,
+   "prev_file": "commitments_sl2026_1.json",
+   "prev_sha256": "311dbed3747f30f7014dd15a9589f6365a2c8ae8cec0e146f55fc94d389411f8",
+   "leagues": {
+    "ARG-1": 50,
+    "BRA-1": 29,
+    "BRA-2": 38,
+    "CHI-1": 25,
+    "COL-1": 31,
+    "CZE-1": 12,
+    "ENG-1": 76,
+    "ENG-2": 104,
+    "ESP-1": 74,
+    "FRA-1": 64,
+    "GER-1": 50,
+    "ITA-1": 94,
+    "MEX-1": 21,
+    "POR-1": 65,
+    "USA-1": 34
+   }
+  }
+ ],
+ "n_batches": 2,
+ "n_commitments_total": 2752,
+ "n_commitments_unique": 2752,
+ "union_definition": "lowercase hex commitment hashes from every batch above, deduplicated, sorted ascending as strings, each followed by a single \n, concatenated and encoded as UTF-8",
+ "union_sha256": "03185d75ed75f7fb6e91a4050853f56e6192ef6ac53137a8214b9b8ce88b8c1b",
+ "sampling_rule": "score = sha256(\"SL-SAMPLE-v1|\" + beacon + \"|\" + commitment_hash); select exactly K = min(100, n_commitments_unique) smallest scores, hex ascending",
+ "beacon": "hash of the first Bitcoin block mined on or after 2027-07-01 00:00 UTC (announced before publication, outside SigningLab's control)",
+ "reveal_order": [
+  "1: commitments published while outcomes are unknown (done)",
+  "2: this cumulative manifest published before any beacon is read",
+  "3: at season close, full-population outcome file computed, frozen, SHA-256 published",
+  "4: beacon read",
+  "5: payload + salt + outcome revealed only for the sampled entries"
+ ]
+}

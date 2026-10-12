@@ -1,0 +1,85 @@
+{
+ "issuer": "SigningLab",
+ "repository": "https://github.com/signinglab/signinglab",
+ "policy": "append-only: published files are never edited or removed; corrections are published as new files that name the superseded file by hash",
+ "generated_utc": "2026-10-12T08:29:51+00:00",
+ "hash_algorithm": "SHA-256",
+ "cumulative_manifest": "sl2026_1/cumulative_manifest_sl2026_1.json",
+ "generations": [
+  {
+   "generation": "SL 2026.1",
+   "n_commitments": 2752,
+   "n_batches": 2,
+   "union_sha256": "03185d75ed75f7fb6e91a4050853f56e6192ef6ac53137a8214b9b8ce88b8c1b",
+   "reveal_due": "season close, after the first Bitcoin block mined on or after 2027-07-01 00:00 UTC"
+  }
+ ],
+ "files": [
+  {
+   "path": "sl2026_1/commitments_sl2026_1.json",
+   "sha256": "311dbed3747f30f7014dd15a9589f6365a2c8ae8cec0e146f55fc94d389411f8",
+   "bytes": 142454,
+   "description": "Batch 001. Chain root: 1,985 commitment hashes, published 17 Aug 2026 while every outcome was still unknown."
+  },
+  {
+   "path": "sl2026_1/commitments_sl2026_1_batch002.json",
+   "sha256": "02bf57ba4183a0b510d72b60d45417e71cda73b6eb5bdaa3bb67a9bf105b63a7",
+   "bytes": 108167,
+   "description": "Batch 002. 767 further commitments, chained to batch 001 by hash, published 12 Oct 2026."
+  },
+  {
+   "path": "sl2026_1/commitments_map_sl2026_1_batch001.json",
+   "sha256": "cfe25c6a782f478f0777b31abe3ccfac6bb909714316ac35b3e667a4e4b66a22",
+   "bytes": 393089,
+   "description": "Which signing each batch-001 commitment belongs to (league, season, player, club). No verdicts."
+  },
+  {
+   "path": "sl2026_1/keys_manifest_sl2026_1_batch001.json",
+   "sha256": "4279d09dcda1704b42ee1820bcb3803bca546b580f10c75c3879848372b46ec0",
+   "bytes": 111938,
+   "description": "The population batch 001 covers, the sampling rule, and the checksum of the sealed salt file."
+  },
+  {
+   "path": "sl2026_1/protocol_addendum_sl2026_1_v1_1.json",
+   "sha256": "97d6e988373ba28be80fb2a05aedbe8eba52d7e98ae8166e309186ddf9d7ab01",
+   "bytes": 1965,
+   "description": "Addendum of 17 Aug 2026 closing two rules earlier wording left ambiguous. Changes no published hash."
+  },
+  {
+   "path": "sl2026_1/cumulative_manifest_sl2026_1.json",
+   "sha256": "6074d9e5a7dade383fbdb0c779532321210b11800f9151c95ff993152fc7cb61",
+   "bytes": 2784,
+   "description": "The full chain fixed before any beacon is read: every batch, its hash, its count, and the hash of the deduplicated union."
+  },
+  {
+   "path": "retrospective/sample_2024.csv",
+   "sha256": "3f757edd95cb2345b1e5ae70cf5285e9fd5564e25d3079218ab8b3049340eb60",
+   "bytes": 5478,
+   "description": "Retrospective pilot, 2024: the 100 signings the 2025-01-01 Bitcoin block selected, with verdict and real outcome."
+  },
+  {
+   "path": "retrospective/sample_2025.csv",
+   "sha256": "74f470e9975fdebde1d89a918ca09282139020aed4f8f648f8b230fd6e2ac523",
+   "bytes": 5473,
+   "description": "Retrospective pilot, 2025: the 100 signings the 2026-01-01 Bitcoin block selected, with verdict and real outcome."
+  },
+  {
+   "path": "retrospective/population_2024.csv",
+   "sha256": "571ca2b6ed7d69dfbb21c751b52718cc86ae3bb6e12e09b6c71eda44ea374858",
+   "bytes": 122414,
+   "description": "The 4,010 signings the 2024 sample was drawn from."
+  },
+  {
+   "path": "retrospective/population_2025.csv",
+   "sha256": "32939924d774260260d6358ce3ff531ff13998a1bb4c48d58715514ae8fa541e",
+   "bytes": 139623,
+   "description": "The 4,549 signings the 2025 sample was drawn from."
+  },
+  {
+   "path": "retrospective/meta.json",
+   "sha256": "ecf1a8136e591642c85e6523430e6c59780d2477bac70a78af58624d8cd4fe2a",
+   "bytes": 631,
+   "description": "Block height, block hash and selection rule for each retrospective sample."
+  }
+ ]
+}

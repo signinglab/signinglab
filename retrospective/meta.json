@@ -1,0 +1,18 @@
+{
+ "2024": {
+  "btc_block_height": 877259,
+  "btc_block_hash": "000000000000000000017866cb07bbbfe690d09f95a6bb70b72e99687a684629",
+  "block_time_utc": "2025-01-01T00:21:15Z",
+  "rule": "sha256(block_hash|season|league|player_key|club_key) ascending, first 100",
+  "n_population": 4010,
+  "n_sample": 100
+ },
+ "2025": {
+  "btc_block_height": 930341,
+  "btc_block_hash": "0000000000000000000095c5c16d1d13a1b70a9298e6c0f555203c73adb3ba8b",
+  "block_time_utc": "2026-01-01T00:06:10Z",
+  "rule": "sha256(block_hash|season|league|player_key|club_key) ascending, first 100",
+  "n_population": 4549,
+  "n_sample": 100
+ }
+}
